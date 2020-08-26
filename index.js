@@ -12,7 +12,7 @@ class ProductScanRNCamera extends Component {
     this.state = {
       camera: {
         type: RNCamera.Constants.Type.back,
-	    flashMode: 'test'
+	    flashMode: RNCamera.Constants.FlashMode.auto
       }
     }
   }
