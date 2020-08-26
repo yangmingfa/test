@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
 import { Button, Text, View } from 'react-native';
-import { RNCamera } from 'react-native-camera'
+import { RNCamera } from 'react-native-camera';
 
 class ProductScanRNCamera extends Component {
 
   constructor(props) {
     super(props)
-    this.camera = null
-    this.barcodeCodes = []
+    this.camera = null;
+    this.barcodeCodes = [];
 
     this.state = {
       camera: {
         type: RNCamera.Constants.Type.back,
-	    flashMode: RNCamera.Constants.FlashMode.auto
+	    flashMode: RNCamera.Constants.FlashMode.auto,
       }
     }
   }
 
   onBarCodeRead(scanResult) {
-    console.warn(scanResult.type)
-    console.warn(scanResult.data)
+    console.warn(scanResult.type);
+    console.warn(scanResult.data);
     if (scanResult.data != null) {
 	if (!this.barcodeCodes.includes(scanResult.data)) {
-	  this.barcodeCodes.push(scanResult.data)
-	  console.warn('onBarCodeRead call')
+	  this.barcodeCodes.push(scanResult.data);
+	  console.warn('onBarCodeRead call');
 	}
     }
     return
@@ -31,9 +31,9 @@ class ProductScanRNCamera extends Component {
 
   async takePicture() {
     if (this.camera) {
-      const options = { quality: 0.5, base64: true }
-      const data = await this.camera.takePictureAsync(options)
-      console.log(data.uri)
+      const options = { quality: 0.5, base64: true };
+      const data = await this.camera.takePictureAsync(options);
+      console.log(data.uri);
     }
   }
 
