@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Text, View } from 'react-native'
+import { Button, Text, View } from 'react-native';
 import { RNCamera } from 'react-native-camera'
 
 class ProductScanRNCamera extends Component {
