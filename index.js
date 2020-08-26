@@ -6,8 +6,8 @@ class ProductScanRNCamera extends Component {
 
   constructor(props) {
     super(props)
-    this.camera = null;
-    this.barcodeCodes = [];
+    this.camera = null
+    this.barcodeCodes = []
 
     this.state = {
       camera: {
