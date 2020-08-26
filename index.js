@@ -6,13 +6,13 @@ class ProductScanRNCamera extends Component {
 
   constructor(props) {
     super(props)
-    this.camera  = null
-    this.barcodeCodes  = []
+    this.camera = null
+    this.barcodeCodes = []
 
     this.state = {
       camera: {
         type: RNCamera.Constants.Type.back,
-	    flashMode: RNCamera.Constants.FlashMode.auto
+	    flashMode: RNCamera.Constants.FlashMode.auto,
       }
     }
   }
