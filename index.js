@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { Button, Text, View } from 'react-native'
-import { RNCamera } from 'react-native-camera'
+import { Button, Text, View } from 'react-native';
+import { RNCamera } from 'react-native-camera';
 
 class ProductScanRNCamera extends Component {
 
   constructor(props) {
     super(props)
-    this.camera = null
-    this.barcodeCodes = []
+    this.camera = null;
+    this.barcodeCodes = [];
 
     this.state = {
       camera: {
@@ -18,12 +18,12 @@ class ProductScanRNCamera extends Component {
   }
 
   onBarCodeRead(scanResult) {
-    console.warn(scanResult.type)
-    console.warn(scanResult.data)
+    console.warn(scanResult.type);
+    console.warn(scanResult.data);
     if (scanResult.data != null) {
 	if (!this.barcodeCodes.includes(scanResult.data)) {
-	  this.barcodeCodes.push(scanResult.data)
-	  console.warn('onBarCodeRead call')
+	  this.barcodeCodes.push(scanResult.data);
+	  console.warn('onBarCodeRead call');
 	}
     }
     return
