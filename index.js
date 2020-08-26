@@ -18,12 +18,12 @@ class ProductScanRNCamera extends Component {
   }
 
   onBarCodeRead(scanResult) {
-    console.warn(scanResult.type);
-    console.warn(scanResult.data);
+    console.warn(scanResult.type)
+    console.warn(scanResult.data)
     if (scanResult.data != null) {
 	if (!this.barcodeCodes.includes(scanResult.data)) {
-	  this.barcodeCodes.push(scanResult.data);
-	  console.warn('onBarCodeRead call');
+	  this.barcodeCodes.push(scanResult.data)
+	  console.warn('onBarCodeRead call')
 	}
     }
     return
