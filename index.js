@@ -1,39 +1,39 @@
-import React, { Component } from 'react';
-import { Button, Text, View } from 'react-native';
-import { RNCamera } from 'react-native-camera';
+import React, { Component } from 'react'
+import { Button, Text, View } from 'react-native'
+import { RNCamera } from 'react-native-camera'
 
 class ProductScanRNCamera extends Component {
 
   constructor(props) {
-    super(props);
-    this.camera = null;
-    this.barcodeCodes = [];
+    super(props)
+    this.camera = null
+    this.barcodeCodes = []
 
     this.state = {
       camera: {
         type: RNCamera.Constants.Type.back,
-	flashMode: RNCamera.Constants.FlashMode.auto,
+	    flashMode: RNCamera.Constants.FlashMode.auto
       }
-    };
+    }
   }
 
   onBarCodeRead(scanResult) {
-    console.warn(scanResult.type);
-    console.warn(scanResult.data);
+    console.warn(scanResult.type)
+    console.warn(scanResult.data)
     if (scanResult.data != null) {
 	if (!this.barcodeCodes.includes(scanResult.data)) {
-	  this.barcodeCodes.push(scanResult.data);
-	  console.warn('onBarCodeRead call');
+	  this.barcodeCodes.push(scanResult.data)
+	  console.warn('onBarCodeRead call')
 	}
     }
-    return;
+    return
   }
 
   async takePicture() {
     if (this.camera) {
-      const options = { quality: 0.5, base64: true };
-      const data = await this.camera.takePictureAsync(options);
-      console.log(data.uri);
+      const options = { quality: 0.5, base64: true }
+      const data = await this.camera.takePictureAsync(options)
+      console.log(data.uri)
     }
   }
 
@@ -49,7 +49,7 @@ class ProductScanRNCamera extends Component {
       >
         <Text>Waiting</Text>
       </View>
-    );
+    )
   }
 
   render() {
@@ -57,7 +57,7 @@ class ProductScanRNCamera extends Component {
       <View style={styles.container}>
         <RNCamera
             ref={ref => {
-              this.camera = ref;
+              this.camera = ref
             }}
             defaultTouchToFocus
             flashMode={this.state.camera.flashMode}
@@ -75,13 +75,13 @@ class ProductScanRNCamera extends Component {
 	</View>
 	<View style={[styles.overlay, styles.bottomOverlay]}>
           <Button
-            onPress={() => { console.log('scan clicked'); }}
+            onPress={() => { console.log('scan clicked') }}
             style={styles.enterBarcodeManualButton}
             title="Enter Barcode"
            />
 	</View>
       </View>
-    );
+    )
   }
 }
 
@@ -127,6 +127,6 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center'
   }
-};
+}
 
-export default ProductScanRNCamera;
+export default ProductScanRNCamera
