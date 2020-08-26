@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { Button, Text, View } from 'react-native'
-import { RNCamera } from 'react-native-camera'
+import React, { Component } from 'react';
+import { Button, Text, View } from 'react-native';
+import { RNCamera } from 'react-native-camera';
 
 class ProductScanRNCamera extends Component {
 
@@ -12,7 +12,7 @@ class ProductScanRNCamera extends Component {
     this.state = {
       camera: {
         type: RNCamera.Constants.Type.back,
-	    flashMode: RNCamera.Constants.FlashMode.auto
+	    flashMode: RNCamera.Constants.FlashMode.auto,
       }
     }
   }
